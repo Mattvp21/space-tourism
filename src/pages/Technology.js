@@ -11,27 +11,28 @@ import { useState } from 'react';
 
 
 const TechnologyPage = styled.div`
-   height: 100vh;
-   background-image: url(${mobileBackground});
+background-image: url(${mobileBackground});
    background-repeat: no-repeat;
    background-size: cover;
    display: flex;
    flex-direction: column;
    justify-content: center; 
    align-items: center;
-
+    
    @media(min-width: 650px) {
+    
+    height: 100vh;
     background: url(${tabletBackground}) no-repeat;
     background-size: cover; 
-    margin-top: 5rem;
 }
 
 @media(min-width: 1000px) {
+    height: 100vh;
     background: url(${desktopBackground}) no-repeat;
     background-size: cover;
-    height: 100vh;
     
-}` 
+    flex-direction: row;
+} ` 
 
 const Title = styled.h2`
     font-family: bellefair, serif;
@@ -39,17 +40,22 @@ const Title = styled.h2`
     text-align: center;
 
     @media(min-width:1000px) {
-        
-        transform: translate(-45rem, -1rem)
+        transform: translateX(-45rem)
     }
 `
 
 const TechnologyContainer = styled.div`
-    width: 100%;
+    margin-top: 6rem;
+    width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: .5rem;
+
+    @media(min-width:650px) {
+        margin-top: 10rem;
+    }
 
     @media(min-width:1000px) {
         height: 400px;
@@ -59,8 +65,8 @@ const TechnologyContainer = styled.div`
 
 const ImageContainer = styled.div`
    margin-top: 1rem;
-    width: 100%;
-    height: 100%;
+    
+    
     display: flex;
     flex-direction: column;
     justify-content:center;

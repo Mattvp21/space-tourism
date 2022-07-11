@@ -11,7 +11,7 @@ import europa from '../assets/destination/image-europa.png'
 import titan from '../assets/destination/image-titan.png'
 
 const DestinationPage = styled.div`
-   height: 100vh;
+   
    background-image: url(${mobileBackground});
    background-repeat: no-repeat;
    background-size: cover;
@@ -28,9 +28,10 @@ const DestinationPage = styled.div`
 }
 
 @media(min-width: 1000px) {
+    height: 100vh;
     background: url(${desktopBackground}) no-repeat;
     background-size: cover;
-    height: 100vh;
+    
     flex-direction: row;
 } 
 `
@@ -44,7 +45,7 @@ const DestinationArticle = styled.article`
     
     
     text-align: center;
-    width: 450px;
+    width: 400px;
     
     font-family: 'Barlow Condensed', sans-serif;
     display: flex;
@@ -68,7 +69,7 @@ const DestinationArticle = styled.article`
 }
 `
 const DestinationContainer = styled.div`
-    margin-top: 10rem;
+    margin-top: 6rem;
     display: flex;
     flex-direction: column;
 

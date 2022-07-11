@@ -20,15 +20,15 @@ const CrewPage = styled.div`
    align-items: center;
 
    @media(min-width: 650px) {
+    height: 100vh;
     background: url(${tabletBackground}) no-repeat;
     background-size: cover; 
 }
 
 @media(min-width: 1000px) {
+    height: 100vh;
     background: url(${desktopBackground}) no-repeat;
     background-size: cover;
-    height: 100vh;
-    flex-direction: row;
 }` 
 
 const Title = styled.h2`
@@ -37,21 +37,25 @@ const Title = styled.h2`
     text-align: center;
 
     @media(min-width:1000px) {
-        
-        transform: translate(-45rem, -1rem)
+        transform: translateX(-45rem);
+       
     }
 `
 
 const CrewContainer = styled.div`
-    
+    margin-top: 6rem;
+    width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: .5rem;
 
+   
     @media(min-width:1000px) {
-        
-        height: 100vh;
+        margin-top: 15rem;
+        justify-content: start;
+        width: 0px;
     }
 `
 
@@ -69,12 +73,12 @@ const ImageContainer = styled.div`
     border-right: none;
 
     @media(min-width: 650px) {
-        width: 450px;
-    height: 370px;
+        
+    
    }
 
    @media(min-width: 1000px) {
-        transform: translate(22rem, 10rem);
+        transform: translate(20rem, 10rem);
         border: none;
         width: 650px;
     height: 570px;
@@ -90,8 +94,6 @@ const ImageContainer = styled.div`
 const CrewArticle = styled.article`
 
 text-align: center;
-width: 450px;
-
 font-family: 'Barlow Condensed', sans-serif;
 display: flex;
 flex-direction:column;
@@ -101,14 +103,14 @@ align-items: center;
 padding: .5rem;
 @media(min-width: 650px) {
    
-    width: 500px;
+   
 }
 
 @media(min-width: 1000px) {
 width: 600px;
 height: 400px;
 text-align: left;
-transform: translate(-15rem, -20rem);
+transform: translate(-15rem, -25rem);
 }
 `
 
@@ -117,10 +119,10 @@ const CrewList = styled.ul`
     flex-direction: row;
     width: 200px;
     justify-content: space-around;
-    
+    margin-top: 1rem;
     font-size: 2rem;
     color:white;
-    height: 2rem;
+    
 
     @media(min-width: 650px) {
         font-size: 1.25rem;
@@ -146,9 +148,9 @@ const CrewPosition = styled.p`
     
 
     @media(min-width: 1000px) {
-    position: relative;
+    
     font-size: 3rem;
-    transform:translate(-10rem, -2rem) ;
+    
 }
 `
 
