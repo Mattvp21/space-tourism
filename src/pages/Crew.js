@@ -3,9 +3,12 @@ import styled from 'styled-components';
 import mobileBackground from '../assets/crew/background-crew-mobile.jpg'
 import tabletBackground from '../assets/crew/background-crew-tablet.jpg'
 import desktopBackground from '../assets/crew/background-crew-desktop.jpg'
-import Title from '../components/Title';
+
 import pageData from '../data/data.json'
-import CrewMember from '../assets/crew/image-anousheh-ansari.png'
+import Victor from '../assets/crew/image-victor-glover.png';
+import Anousheh from '../assets/crew/image-anousheh-ansari.png';
+import Douglas from '../assets/crew/image-douglas-hurley.png';
+import Mark from '../assets/crew/image-mark-shuttleworth.png'
 const CrewPage = styled.div`
    height: 100vh;
    background-image: url(${mobileBackground});
@@ -25,12 +28,37 @@ const CrewPage = styled.div`
     background: url(${desktopBackground}) no-repeat;
     background-size: cover;
     height: 100vh;
+    flex-direction: row;
 }` 
 
+const Title = styled.h2`
+    font-family: bellefair, serif;
+    color: white;
+    text-align: center;
+
+    @media(min-width:1000px) {
+        
+        transform: translate(-45rem, -1rem)
+    }
+`
+
+const CrewContainer = styled.div`
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media(min-width:1000px) {
+        
+        height: 100vh;
+    }
+`
+
 const ImageContainer = styled.div`
-    margin-top: 2rem;
-    width: 450px;
-    height: 265px;
+   margin-top: 1rem;
+    width: 270px;
+    height: 270px;
     display: flex;
     flex-direction: column;
     justify-content:center;
@@ -41,22 +69,29 @@ const ImageContainer = styled.div`
     border-right: none;
 
     @media(min-width: 650px) {
-        width: 250px;
-    height: 250px;
+        width: 450px;
+    height: 370px;
    }
 
    @media(min-width: 1000px) {
-        transform: translate(-8rem, 3rem);
-        width: 350px;
-    height: 350px;
+        transform: translate(22rem, 10rem);
+        border: none;
+        width: 650px;
+    height: 570px;
    }
+   `
+
+   const StyledImage = styled.img`
+   
+    height: 80%;
+    width: 80%;
    `
 
 const CrewArticle = styled.article`
 
 text-align: center;
 width: 450px;
-margin-top: 1rem;
+
 font-family: 'Barlow Condensed', sans-serif;
 display: flex;
 flex-direction:column;
@@ -71,8 +106,9 @@ padding: .5rem;
 
 @media(min-width: 1000px) {
 width: 600px;
+height: 400px;
 text-align: left;
-margin-left: 48px;
+transform: translate(-15rem, -20rem);
 }
 `
 
@@ -81,7 +117,6 @@ const CrewList = styled.ul`
     flex-direction: row;
     width: 200px;
     justify-content: space-around;
-    margin-top: 1rem;
     
     font-size: 2rem;
     color:white;
@@ -94,74 +129,45 @@ const CrewList = styled.ul`
 
    @media(min-width: 1000px) {
         font-size: 1.5rem;
-        
         width: 400px;
+        transform:translateX(-12rem) ;
    }
 `
 
-const CrewListLabel = styled.label`
-
-`
-
-const CrewListItem = styled.button`
-  position: relative;
-  
-  margin: 0 1rem 0 0 ;
-  
+const CrewListItem = styled.li`
   cursor: pointer;
-  
-  ::before {
-    
-    content: "";
-
-    
-    z-index: 1;
-    
-    width: 1rem;
-    height: 1rem;
-    background: grey;
-    border-radius: 50%;
-
-    :checked {
-    ::before {
-     transform: scale(1,1); 
-    }
-  }
-}
-  ::after {
-    content: "";
-    
-    position: absolute;
-    
-    
-    width: 1rem;
-    height: 1rem;
-    
-    background: #fff;
-    
-    border: 2px solid green;
-    border-radius: 50%;
-  }
 `
 
 const CrewPosition = styled.p`
-    margin-top: 1rem;
+    
     font-family: bellefair, serif;
     color: white;
     opacity: .4;
+    
+
+    @media(min-width: 1000px) {
+    position: relative;
+    font-size: 3rem;
+    transform:translate(-10rem, -2rem) ;
+}
 `
 
 const CrewName = styled.h2`
-    margin-top: 1rem;
+    
     font-family: bellefair, serif;
     color: white;
      
+    @media(min-width: 1000px) {
+    width: 600px;
+    text-align: left;
+    font-size: 4rem;
+}
 `
 
 const Description = styled.p`
  font-family: 'Barlow Condensed', sans-serif;
     color: rgb(208 214 249);
-    margin-bottom: 5rem;
+   
     line-height: 1.5;
     padding: .5rem;
 
@@ -184,35 +190,50 @@ const Crew = () => {
     const [crew] = useState(pageData.crew);
     const [tab, setTab] = useState(0)
     const {name, images, role, bio} = crew[tab]
+    const [image, setImage] = useState(Douglas)
 
     const handleClick = (e) => {
-        setTab(e.target.value)
+        setTab(e.target.value);
+
+        switch (tab) {
+            case 0:
+               setImage(Douglas);
+               break
+                case 1:
+                 setImage(Mark);
+                 break
+                case 2:
+                    setImage(Victor);
+                    break
+                    case 3:
+                        setImage(Anousheh);
+                        break
+                        default:
+                return ; 
+        }
     }
     return (
         <CrewPage>
-             <Title number='02' heading='MEET YOUR CREW'/>
-             <ImageContainer>
-                  <img src={CrewMember} alt='planet' width={250}/>
+        <CrewContainer>
+            <ImageContainer>
+             <Title>02 MEET YOUR CREW</Title>
+                  <StyledImage src={image} alt='crew'/>
             </ImageContainer> 
             <CrewList>
-                    <CrewListLabel>
-                        <CrewListItem onClick={handleClick} name='crew-button' type='radio' value='0'></CrewListItem>
-                    </CrewListLabel>
-                    <CrewListLabel>
-                        <CrewListItem onClick={handleClick} name='crew-button' type='radio' value='1'></CrewListItem>
-                    </CrewListLabel>
-                    <CrewListLabel>
-                    <CrewListItem onClick={handleClick} name='crew-button' type='radio' value='2'></CrewListItem>
-                    </CrewListLabel>
-                    <CrewListLabel>
-                    <CrewListItem onClick={handleClick} name='crew-button' type='radio' value='3'></CrewListItem>
-                    </CrewListLabel>
+                    
+                        <CrewListItem onClick={handleClick} name='crew-button' value='0'></CrewListItem>
+                        <CrewListItem onClick={handleClick} name='crew-button' value='1'></CrewListItem>
+                        <CrewListItem onClick={handleClick} name='crew-button' value='2'></CrewListItem>                    
+                     <CrewListItem onClick={handleClick} name='crew-button' value='3'></CrewListItem>
+
             </CrewList> 
             <CrewArticle>
-                <CrewPosition>COMMANDER</CrewPosition>
-                <CrewName>MATTHEW VAN PELT</CrewName>
-                <Description>Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.</Description>
+                <CrewPosition>{role}</CrewPosition>
+                <CrewName>{name}</CrewName>
+                <Description>{bio}</Description>
             </CrewArticle>
+            </CrewContainer>
+             
         </CrewPage>
     )
 }

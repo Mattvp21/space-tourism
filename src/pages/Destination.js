@@ -4,14 +4,13 @@ import mobileBackground from '../assets/destination/background-destination-mobil
 import tabletBackground from '../assets/destination/background-destination-tablet.jpg'
 import desktopBackground from '../assets/destination/background-destination-desktop.jpg'
 import pageData from '../data/data.json'
-import Title from '../components/Title';
+
 import moon from '../assets/destination/image-moon.png'
 import mars from '../assets/destination/image-mars.png'
 import europa from '../assets/destination/image-europa.png'
 import titan from '../assets/destination/image-titan.png'
 
 const DestinationPage = styled.div`
-    
    height: 100vh;
    background-image: url(${mobileBackground});
    background-repeat: no-repeat;
@@ -22,6 +21,7 @@ const DestinationPage = styled.div`
    align-items: center;
     
    @media(min-width: 650px) {
+    
     
     background: url(${tabletBackground}) no-repeat;
     background-size: cover; 
@@ -35,12 +35,17 @@ const DestinationPage = styled.div`
 } 
 `
 
+const Title = styled.h2`
+    font-family: bellefair, serif;
+    color: white;
+`
+
 const DestinationArticle = styled.article`
     
     
     text-align: center;
     width: 450px;
-    margin-top: 1rem;
+    
     font-family: 'Barlow Condensed', sans-serif;
     display: flex;
     flex-direction:column;
@@ -62,25 +67,46 @@ const DestinationArticle = styled.article`
     margin-left: 48px;
 }
 `
-
-const ImageContainer = styled.div`
-    width: 175px;
-    height: 175px;
+const DestinationContainer = styled.div`
+    margin-top: 10rem;
     display: flex;
     flex-direction: column;
-    justify-content:center;
+
+    @media(min-width: 1000px) {
+       flex-direction: row;
+    }
+
+`
+const ImageContainer = styled.div`
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     @media(min-width: 650px) {
-        width: 225px;
-    height: 225px;
+       
    }
 
    @media(min-width: 1000px) {
-        transform: translate(-8rem, 3rem);
-        width: 350px;
-    height: 350px;
+       
    }
     
+`
+
+const StyledImage = styled.img`
+    margin-top: 1rem;
+    width: 200px;
+   height: 200px;
+
+   @media(min-width: 650px) {
+   
+    }
+ 
+    @media(min-width: 1000px) {
+         width: 450px;
+     height: 450px;
+    }
 `
 const MoonList = styled.ul`
     display: flex;
@@ -174,7 +200,7 @@ const StatNum = styled.p`
     font-family: bellefair, serif;
     font-size: 1.5rem;
     line-spacing: 3rem;
-    color: white;;
+    color: white;
     text-align: center;
 
     @media(min-width: 650px) {
@@ -222,9 +248,12 @@ const Destination = () => {
    
     return (
         <DestinationPage>
-            <Title number='01' heading='PICK YOUR DESTINATION'/>
+        
+
+        <DestinationContainer> 
             <ImageContainer >
-                  <img src={image} alt='planet' title={name}/>
+            <Title>01 PICK YOUR DESTINATION</Title>
+                  <StyledImage src={image} alt='planet' title={name} />
             </ImageContainer> 
             <DestinationArticle>
 
@@ -256,9 +285,10 @@ const Destination = () => {
             </StatContainer>
             </Part2>
             </DestinationArticle>
-           
-           
+            </DestinationContainer>   
         </DestinationPage>
+            
+           
     )
 }
 
