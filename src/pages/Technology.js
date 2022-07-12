@@ -65,7 +65,7 @@ const ImageContainer = styled.div`
    }
 
    @media(min-width: 1000px) {
-    transform: translateX(40rem);
+    transform: translateX(35rem);
    
     width: 40rem;
    }
@@ -99,9 +99,13 @@ padding: .5rem;
 
 @media(min-width: 1000px) {
 width: 30rem;
-
+display: block;
+flex-direction:column;
+justify-content: center;
+align-items: center;
 text-align: left;
-transform: translate(-35rem, 0rem);
+position: absolute;
+transform: translate(-10rem, 0rem);
 
 }
 `
@@ -128,7 +132,7 @@ const TechnologyList = styled.ul`
         font-size: 1.5rem;
         height: 400px;
         flex-direction: column;
-       transform: translateX(-25rem);
+       transform: translateX(-40rem);
    }
 `
 
