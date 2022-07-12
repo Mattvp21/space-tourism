@@ -40,13 +40,14 @@ const Title = styled.h2`
     text-align: center;
 
     @media(min-width:1000px) {
-        transform: translateX(-45rem)
+        position: absolute;
+        transform: translate(-20rem, -12rem)
     }
 `
 
 const TechnologyContainer = styled.div`
-    margin-top: 6rem;
-    width: 400px;
+    margin-top: 10rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,7 +55,7 @@ const TechnologyContainer = styled.div`
     padding: .5rem;
 
     @media(min-width:650px) {
-        margin-top: 10rem;
+        margin-top: 15rem;
     }
 
     @media(min-width:1000px) {
@@ -65,8 +66,7 @@ const TechnologyContainer = styled.div`
 
 const ImageContainer = styled.div`
    margin-top: 1rem;
-    
-    
+   width: 100%;
     display: flex;
     flex-direction: column;
     justify-content:center;
@@ -78,7 +78,6 @@ const ImageContainer = styled.div`
 
     @media(min-width: 650px) {
        
-        width: 100%;
    }
 
    @media(min-width: 1000px) {
@@ -89,9 +88,10 @@ const ImageContainer = styled.div`
    `
 
    const StyledImage = styled.img`
+   width: 100%;
     @media(min-width: 1000px) {
-    height: 500px;
-    width: 500px;
+        width: 500px;
+        height: 500px;
    }
 
    `
@@ -228,8 +228,9 @@ const Technology = () => {
     return (
         <TechnologyPage>
         <TechnologyContainer>
-            <ImageContainer>
+            
              <Title>03 SPACE LAUNCH 101</Title>
+            <ImageContainer>
                   <StyledImage src={image} alt='vehicle'/>
             </ImageContainer> 
             <TechnologyList>

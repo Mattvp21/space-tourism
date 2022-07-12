@@ -51,6 +51,10 @@ const CrewContainer = styled.div`
     align-items: center;
     padding: .5rem;
 
+    @media(min-width:650px) {
+        margin-top: 10rem;
+    }
+
    
     @media(min-width:1000px) {
         margin-top: 15rem;
@@ -92,7 +96,7 @@ const ImageContainer = styled.div`
    `
 
 const CrewArticle = styled.article`
-
+width: 100%;
 text-align: center;
 font-family: 'Barlow Condensed', sans-serif;
 display: flex;
@@ -102,7 +106,7 @@ align-items: center;
 
 padding: .5rem;
 @media(min-width: 650px) {
-   
+    
    
 }
 
@@ -169,7 +173,7 @@ const CrewName = styled.h2`
 const Description = styled.p`
  font-family: 'Barlow Condensed', sans-serif;
     color: rgb(208 214 249);
-   
+    width: 100%;
     line-height: 1.5;
     padding: .5rem;
 
