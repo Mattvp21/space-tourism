@@ -12,25 +12,21 @@ import { useState } from 'react';
 
 const TechnologyPage = styled.div`
 background-image: url(${mobileBackground});
+    height: 100vh;
    background-repeat: no-repeat;
    background-size: cover;
-   display: flex;
-   flex-direction: column;
-   justify-content: center; 
-   align-items: center;
+   
     
    @media(min-width: 650px) {
     
-    height: 100vh;
+    
     background: url(${tabletBackground}) no-repeat;
     background-size: cover; 
 }
 
 @media(min-width: 1000px) {
-    height: 100vh;
+   
     background: url(${desktopBackground}) no-repeat;
-    background-size: cover;
-    
     flex-direction: row;
 } ` 
 
@@ -46,52 +42,40 @@ const Title = styled.h2`
 `
 
 const TechnologyContainer = styled.div`
-    margin-top: 10rem;
-    width: 100%;
+    transform: translateY(6rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: .5rem;
-
-    @media(min-width:650px) {
-        margin-top: 15rem;
+    @media(min-width: 1000px) {
+       flex-direction: row;
     }
 
-    @media(min-width:1000px) {
-        height: 400px;
-        width: 500px;
-    }
 `
 
 const ImageContainer = styled.div`
-   margin-top: 1rem;
-   width: 100%;
+  margin-top: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content:center;
-    align-items:center;
-    border: solid grey 1px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
+    justify-content: center;
+    align-items: center;
 
     @media(min-width: 650px) {
        
    }
 
    @media(min-width: 1000px) {
-    transform: translate(20rem, 12rem);
-    height: 500px;
-    width: 500px;
+    transform: translateX(40rem);
+   
+    width: 40rem;
    }
    `
 
    const StyledImage = styled.img`
    width: 100%;
     @media(min-width: 1000px) {
-        width: 500px;
-        height: 500px;
+        width: 30rem;
+        height: 30rem;
    }
 
    `
@@ -114,34 +98,37 @@ padding: .5rem;
 }
 
 @media(min-width: 1000px) {
-width: 400px;
-height: 400px;
+width: 30rem;
+
 text-align: left;
-transform: translate(-15rem, -20rem);
+transform: translate(-35rem, 0rem);
 
 }
 `
 
 const TechnologyList = styled.ul`
-    display: flex;
+     display: flex;
     flex-direction: row;
     width: 200px;
     justify-content: space-around;
-    margin-top: 1rem; 
-    font-size: 2rem;
+    
+    margin-top: 1rem;
+    list-style:none;
+    font-size: 1rem;
     color:white;
-    height: 4rem;
+    height: 2rem;
 
     @media(min-width: 650px) {
         font-size: 1.25rem;
         width: 300px;
    }
 
+
    @media(min-width: 1000px) {
         font-size: 1.5rem;
         height: 400px;
         flex-direction: column;
-        transform: translate(-25rem, -2rem);
+       transform: translateX(-25rem);
    }
 `
 

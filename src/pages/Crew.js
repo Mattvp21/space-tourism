@@ -20,15 +20,15 @@ const CrewPage = styled.div`
    align-items: center;
 
    @media(min-width: 650px) {
-    height: 100vh;
+    height: 100%;
     background: url(${tabletBackground}) no-repeat;
     background-size: cover; 
 }
 
 @media(min-width: 1000px) {
-    height: 100vh;
+   height: 100vh;
     background: url(${desktopBackground}) no-repeat;
-    background-size: cover;
+   
 }` 
 
 const Title = styled.h2`
@@ -37,29 +37,27 @@ const Title = styled.h2`
     text-align: center;
 
     @media(min-width:1000px) {
-        transform: translateX(-45rem);
+        transform: translate(-45rem, -5rem);
        
     }
 `
 
 const CrewContainer = styled.div`
-    margin-top: 6rem;
-    width: 400px;
+    width:30rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: .5rem;
 
     @media(min-width:650px) {
-        margin-top: 10rem;
+        margin-top:10rem;
     }
 
    
     @media(min-width:1000px) {
-        margin-top: 15rem;
+        margin-top: 0;
         justify-content: start;
-        width: 0px;
+        height: 100%;
     }
 `
 
@@ -85,7 +83,7 @@ const ImageContainer = styled.div`
         transform: translate(20rem, 10rem);
         border: none;
         width: 650px;
-    height: 570px;
+    height: 500px;
    }
    `
 
@@ -136,7 +134,7 @@ const CrewList = styled.ul`
    @media(min-width: 1000px) {
         font-size: 1.5rem;
         width: 400px;
-        transform:translateX(-12rem) ;
+        transform:translate(-12rem, 3rem) ;
    }
 `
 
