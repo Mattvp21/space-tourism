@@ -194,34 +194,23 @@ const Crew = () => {
     const [crew] = useState(pageData.crew);
     const [tab, setTab] = useState(0)
     const {name, images, role, bio} = crew[tab]
-    const [image, setImage] = useState(Douglas)
+    
 
     const handleClick = (e) => {
         setTab(e.target.value);
 
-        switch (tab) {
-            case 0:
-               setImage(Douglas);
-               break
-                case 1:
-                 setImage(Mark);
-                 break
-                case 2:
-                    setImage(Victor);
-                    break
-                    case 3:
-                        setImage(Anousheh);
-                        break
-                        default:
-                return ; 
-        }
+      
     }
     return (
         <CrewPage>
         <CrewContainer>
             <ImageContainer>
              <Title>02 MEET YOUR CREW</Title>
-                  <StyledImage src={image} alt='crew'/>
+                  <StyledImage src={tab === 0 ? Douglas 
+                  : tab === 1 ? Mark 
+                  : tab === 2 ? Victor 
+                  : tab === 3 ? Anousheh 
+                  : Douglas} alt='crew'/>
             </ImageContainer> 
             <CrewList>
                     

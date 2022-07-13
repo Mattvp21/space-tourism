@@ -216,7 +216,7 @@ const Destination = () => {
     const [tab, setTab] = useState(0);
    
     const {name, description, images, distance, travel } = planets[tab]
-    const [image, setImage] = useState(moon)
+    
     console.log(images.png)
     
 
@@ -225,24 +225,7 @@ const Destination = () => {
         
     }
 
-    const handleImage = () => {
-        switch (tab) {
-            case 0:
-               setImage(moon);
-               break
-                case 1:
-                 setImage(mars);
-                 break
-                case 2:
-                    setImage(europa);
-                    break
-                    case 3:
-                        setImage(titan);
-                        break
-                        default:
-                return ; 
-        }
-    }
+   
 
    
     
@@ -254,7 +237,11 @@ const Destination = () => {
         <DestinationContainer> 
             <ImageContainer >
             <Title>01 PICK YOUR DESTINATION</Title>
-                  <StyledImage src={image} alt='planet' title={name} />
+                  <StyledImage src={tab === 0 ? moon 
+                  : tab === 1 ? mars 
+                  : tab === 2 ? europa 
+                  : tab === 3 ? titan 
+                  : moon} alt='planet' title={name} />
             </ImageContainer> 
             <DestinationArticle>
 
@@ -265,7 +252,6 @@ const Destination = () => {
                         value={index}
                         onClick={event => {
                             handleClick(event);
-                            handleImage();
                         }}
                         o> 
                         {item.name}

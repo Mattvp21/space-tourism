@@ -198,23 +198,11 @@ const Technology = () => {
     const [technology] = useState(pageData.technology);
     const [tab, setTab] = useState(0);
     const {name, images, description} = technology[tab];
-    const [image, setImage] = useState(LaunchVehicle);
-    console.log(image)
+    
+    
     const handleClick = (e) => {
         setTab(e.target.value);
-        switch (tab) {
-            case 0:
-               setImage(LaunchVehicle);
-               break
-                case 1:
-                 setImage(Spaceport);
-                 break
-                case 2:
-                    setImage(Spacecapsule);
-                    break
-                    default:
-                return; 
-            }
+        
         }
     return (
         <TechnologyPage>
@@ -222,7 +210,10 @@ const Technology = () => {
             
              <Title>03 SPACE LAUNCH 101</Title>
             <ImageContainer>
-                  <StyledImage src={image} alt='vehicle'/>
+                  <StyledImage src={tab === '0' ? LaunchVehicle
+                  : tab === '1' ? Spaceport 
+                  : tab === '2' ? Spacecapsule 
+                  : LaunchVehicle} alt='vehicle'/>
             </ImageContainer> 
             <TechnologyList>
                         <TechnologyListItem  name='Technology-button' 
