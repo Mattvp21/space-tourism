@@ -17,7 +17,7 @@ const HomePage = styled.div`
    align-items: center;
 
 @media(min-width: 650px) {
-    height: 100vh;
+    height: auto;
     background: url(${tabletBackground}) no-repeat;
     background-size: cover; 
 }
@@ -31,41 +31,42 @@ const HomePage = styled.div`
 }` 
 
 const SpaceContainer = styled.section `
-    display: flex;
-   flex-direction: column;
-   justify-content: center; 
-   align-items: center;
-
-   @media(min-width: 650px) {
+    height: 300px;
+    width: 300px;
    margin-top: 6rem;
-}
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
 
-@media(min-width: 1000px) {
+    @media(min-width: 650px) {
+        height: 500px;
+    width: 500px;
+    }
+
+    @media(min-width: 1000px) {
+        
     width: 100%;
-   margin-top: 10rem;
-   flex-direction: row;
-   justify-content: space-between;
+       flex-direction: row;
+    }
    
-}
 `
 
 const Article = styled.article`
-    margin-top: 1rem;
+   width: 300px;
     text-align: center;
-    width: 300px;
-    height: 300px;
+    
     font-family: 'Barlow Condensed', sans-serif;
 
     @media(min-width: 650px) {
-        margin-top:6rem;
-        width: 400px;
-    height: 400px;
+        width: 100%;
+      margin-top: 6rem;
     }
 
     @media(min-width: 1000px) {
         width: 600px;
     height: 600px;
-        margin-top:0rem;
+        
     text-align: left;
     margin-left: 4rem;
 }
