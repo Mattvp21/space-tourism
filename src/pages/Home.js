@@ -17,6 +17,7 @@ const HomePage = styled.div`
    align-items: center;
 
 @media(min-width: 650px) {
+    height: 100vh;
     background: url(${tabletBackground}) no-repeat;
     background-size: cover; 
 }
@@ -38,12 +39,15 @@ const Article = styled.article`
     font-family: 'Barlow Condensed', sans-serif;
 
     @media(min-width: 650px) {
-
+        margin-top:6rem;
         width: 400px;
-        height: 400px;
+    height: 400px;
     }
 
     @media(min-width: 1000px) {
+        width: 600px;
+    height: 600px;
+        margin-top:0rem;
     text-align: left;
     margin-left: 48px;
 }
@@ -103,7 +107,7 @@ const ExploreButtonContainer = styled.div`
     @media(min-width: 650px) {
         width: 300px;
         height: 300px;
-        margin-top: 0rem;
+        margin-top: 10rem;
     } 
     
     @media(min-width: 1000px) {
