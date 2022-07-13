@@ -7,12 +7,24 @@ const LoaderContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: translateY(20rem);
 `
 
 const Loader = () => {
     return (
         <LoaderContainer>
-            <img src={Load} alt='loader' />
+            <motion.div animate={{
+                    rotate: 10000,
+                   
+                }}
+                transition={{
+      flip: Infinity,
+      duration: 9,
+      ease: "easeInOut",
+}}>
+             <img src={Load} alt='loader' />
+            </motion.div>
+            
         </LoaderContainer>
     )
 }

@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import './App.css';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Home from './pages/Home';
@@ -11,22 +11,33 @@ import Loader from "./components/Loader";
 
 
 function App() {
+
+
+  const [spinner, setSpinner] = useState(false);
+
+  const handleSpinner = () =>  setSpinner(true)
   return (
-    <Suspense fallback={Loader}>
+    <div onLoad={handleSpinner}>
       <BrowserRouter>
         <Header/>
-        <Routes>
+        {spinner ? 
+          <Routes>
        
-        <Route path='/' element={<Home />} />
-        <Route path='/destination' element={<Destination />} />
-        <Route path='/crew' element={<Crew />} />
-        <Route path='/technology' element={<Technology />} />
-        
-        
-        </Routes>
+       <Route path='/' element={<Home />} />
+       <Route path='/destination' element={<Destination />} />
+       <Route path='/crew' element={<Crew />} />
+       <Route path='/technology' element={<Technology />} />
+       
+       
+       </Routes>
+        :
+        <Loader/>}
+       
        
       </BrowserRouter>
-    </Suspense>
+    </div>
+      
+   
   );
 }
 
