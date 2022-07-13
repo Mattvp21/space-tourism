@@ -179,7 +179,7 @@ const Description = styled.p`
  font-family: 'Barlow Condensed', sans-serif;
     color: rgb(208 214 249);
     line-height: 1.5;
-    padding: .5rem;
+    padding: 2rem;
 
     @media(min-width: 650px) {
         font-size: 1.25rem;
