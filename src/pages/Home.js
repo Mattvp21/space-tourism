@@ -28,7 +28,25 @@ const HomePage = styled.div`
     height: 100vh;
     flex-direction: row;
     justify-content: space-between;
-} 
+}` 
+
+const SpaceContainer = styled.section `
+    display: flex;
+   flex-direction: column;
+   justify-content: center; 
+   align-items: center;
+
+   @media(min-width: 650px) {
+   margin-top: 6rem;
+}
+
+@media(min-width: 1000px) {
+    width: 100%;
+   margin-top: 10rem;
+   flex-direction: row;
+   justify-content: space-between;
+   
+}
 `
 
 const Article = styled.article`
@@ -49,7 +67,7 @@ const Article = styled.article`
     height: 600px;
         margin-top:0rem;
     text-align: left;
-    margin-left: 48px;
+    margin-left: 4rem;
 }
 `
 const SoYouWant = styled.p`
@@ -111,7 +129,7 @@ const ExploreButtonContainer = styled.div`
     } 
     
     @media(min-width: 1000px) {
-        transform:translate(-2rem ,7rem)
+        margin-right: 4rem;
     }  
 `
 
@@ -149,6 +167,7 @@ const Home = () => {
     
     return (
         <HomePage>
+            <SpaceContainer>
             <Article>
                 <SoYouWant>SO YOU WANT TO TRAVEL TO</SoYouWant>
                 <Space>SPACE</Space>
@@ -167,6 +186,8 @@ const Home = () => {
                 </motion.div>
                 
             </ExploreButtonContainer>
+            </SpaceContainer>
+            
         </HomePage>
     ) 
     
