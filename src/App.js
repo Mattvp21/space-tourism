@@ -7,6 +7,7 @@ import Crew from './pages/Crew';
 import Technology from './pages/Technology'
 import Header from './components/Header';
 import Loader from "./components/Loader";
+import Page404 from "./components/404";
 
 
 
@@ -27,7 +28,7 @@ function App() {
        <Route path='/destination' element={<Destination />} />
        <Route path='/crew' element={<Crew />} />
        <Route path='/technology' element={<Technology />} />
-       
+       <Route path='*' element={<Page404 />} />
        
        </Routes>
         :
